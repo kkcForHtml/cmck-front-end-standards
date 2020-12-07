@@ -2,9 +2,7 @@
 
 此文档为Vue官方文档，请认真阅读。
 
-最新风格指南地址： https://cn.vuejs.org/v2/style-guide/
-
-
+最新风格指南地址： <https://cn.vuejs.org/v2/style-guide/>
 
 ## 风格指南
 
@@ -13,8 +11,6 @@
 对于其绝大部分，我也总体上避免就 JavaScript 或 HTML 的本身提出建议。我不介意你是否使用分号或结尾的逗号。我们不介意你在 HTML 特性中使用单引号还是双引号。不过当我发现在 Vue 的情景下有帮助的特定模式时，也会存在例外。
 
 最后，我把所有的规则归为了四个大类：
-
-
 
 ## [规则归类](https://cn.vuejs.org/v2/style-guide/#%E8%A7%84%E5%88%99%E5%BD%92%E7%B1%BB)
 
@@ -86,7 +82,7 @@ export default {
 
 当在组件中使用 `data` 属性的时候 (除了 `new Vue` 外的任何地方)，它的值必须是返回一个对象的函数。
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -150,7 +146,7 @@ new Vue({
 
 在你提交的代码中，prop 的定义应该尽量详细，至少需要指定其类型。
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -194,7 +190,7 @@ props: {
 
 在组件上*总是*必须用 `key` 配合 `v-for`，以便维护内部组件及其子树的状态。甚至在元素上维护可预测的行为，比如动画中的[对象固化 (object constancy)](https://bost.ocks.org/mike/constancy/)，也是一种好的做法。
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -230,7 +226,7 @@ props: {
 - 为了过滤一个列表中的项目 (比如 `v-for="user in users" v-if="user.isActive"`)。在这种情形下，请将 `users`替换为一个计算属性 (比如 `activeUsers`)，让其返回过滤后的列表。
 - 为了避免渲染本应该被隐藏的列表 (比如 `v-for="user in users" v-if="shouldShowUsers"`)。这种情形下，请将 `v-if` 移动至容器元素上 (比如 `ul`, `ol`)。
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -296,11 +292,11 @@ props: {
 
 这让覆写内部样式更容易：使用了常人可理解的 class 名称且没有太高的选择器优先级，而且不太会导致冲突。
 
- 详解 
+ 详解
 
 #### 反例
 
-```js
+```html
 <template>
   <button class="btn btn-close">X</button>
 </template>
@@ -315,7 +311,7 @@ props: {
 
 #### 好例子
 
-```js
+```html
 <template>
   <button class="button button-close">X</button>
 </template>
@@ -334,7 +330,7 @@ props: {
 
 ```
 
-```js
+```html
 <template>
   <button :class="[$style.button, $style.buttonClose]">X</button>
 </template>
@@ -353,7 +349,7 @@ props: {
 
 ```
 
-```js
+```html
 <template>
   <button class="c-Button c-Button--close">X</button>
 </template>
@@ -376,7 +372,7 @@ props: {
 
 **在插件、混入等扩展中始终为自定义的私有属性使用 $_ 前缀。并附带一个命名空间以回避和其它作者的冲突 (比如 $_yourPluginName_)。**
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -465,14 +461,14 @@ Vue.component('TodoItem', {
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- TodoList.js
 |- TodoItem.js
 
 ```
 
-```js
+```cpp
 components/
 |- TodoList.vue
 |- TodoItem.vue
@@ -487,13 +483,13 @@ components/
 
 #### 反例
 
-```js
+```cpp
 components/
 |- mycomponent.vue
 
 ```
 
-```js
+```cpp
 components/
 |- myComponent.vue
 
@@ -501,13 +497,13 @@ components/
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- MyComponent.vue
 
 ```
 
-```js
+```cpp
 components/
 |- my-component.vue
 
@@ -517,11 +513,11 @@ components/
 
 **应用特定样式和约定的基础组件 (也就是展示类的、无逻辑的或无状态的组件) 应该全部以一个特定的前缀开头，比如 Base、App 或 V。**
 
- 详解 
+ 详解
 
 #### 反例
 
-```js
+```cpp
 components/
 |- MyButton.vue
 |- VueTable.vue
@@ -531,7 +527,7 @@ components/
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- BaseButton.vue
 |- BaseTable.vue
@@ -539,7 +535,7 @@ components/
 
 ```
 
-```js
+```cpp
 components/
 |- AppButton.vue
 |- AppTable.vue
@@ -547,7 +543,7 @@ components/
 
 ```
 
-```js
+```cpp
 components/
 |- VButton.vue
 |- VTable.vue
@@ -563,7 +559,7 @@ components/
 
 #### 反例
 
-```js
+```cpp
 components/
 |- Heading.vue
 |- MySidebar.vue
@@ -572,7 +568,7 @@ components/
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- TheHeading.vue
 |- TheSidebar.vue
@@ -585,11 +581,11 @@ components/
 
 如果一个组件只在某个父组件的场景下有意义，这层关系应该体现在其名字上。因为编辑器通常会按字母顺序组织文件，所以这样做可以把相关联的文件排在一起。
 
- 详解 
+ 详解
 
 #### 反例
 
-```js
+```cpp
 components/
 |- TodoList.vue
 |- TodoItem.vue
@@ -597,7 +593,7 @@ components/
 
 ```
 
-```js
+```cpp
 components/
 |- SearchSidebar.vue
 |- NavigationForSearchSidebar.vue
@@ -606,7 +602,7 @@ components/
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- TodoList.vue
 |- TodoListItem.vue
@@ -614,7 +610,7 @@ components/
 
 ```
 
-```js
+```cpp
 components/
 |- SearchSidebar.vue
 |- SearchSidebarNavigation.vue
@@ -625,11 +621,11 @@ components/
 
 **组件名应该以高级别的 (通常是一般化描述的) 单词开头，以描述性的修饰词结尾。**
 
- 详解 
+ 详解
 
 #### 反例
 
-```js
+```cpp
 components/
 |- ClearSearchButton.vue
 |- ExcludeFromSearchInput.vue
@@ -642,7 +638,7 @@ components/
 
 #### 好例子
 
-```js
+```cpp
 components/
 |- SearchButtonClear.vue
 |- SearchButtonRun.vue
@@ -749,7 +745,7 @@ PascalCase 相比 kebab-case 有一些优势：
 
 **JS/JSX 中的组件名应该始终是 PascalCase 的，尽管在较为简单的应用中只使用Vue.component 进行全局组件注册时，可以使用 kebab-case 字符串。**
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -818,7 +814,7 @@ export default {
 
 #### 反例
 
-```
+```cpp
 components/
 |- SdSettings.vue
 |- UProfOpts.vue
@@ -827,7 +823,7 @@ components/
 
 #### 好例子
 
-```
+```cpp
 components/
 |- StudentDashboardSettings.vue
 |- UserProfileOptions.vue
@@ -849,7 +845,7 @@ props: {
 
 ```
 
-```js
+```html
 <WelcomeMessage greetingText="hi"/>
 
 ```
@@ -863,7 +859,7 @@ props: {
 
 ```
 
-```js
+```html
 <WelcomeMessage greeting-text="hi"/>
 
 ```
@@ -876,27 +872,27 @@ props: {
 
 #### 反例
 
-```js
-<img src="https://vuejs.org/images/logo.png" alt="Vue Logo">
+```html
+<img src="https://vuejs.org/images/logo.png" alt="Vue Logo" />
 
 ```
 
-```js
-<MyComponent foo="a" bar="b" baz="c"/>
+```html
+<MyComponent foo="a" bar="b" baz="c" />
 
 ```
 
 #### 好例子
 
-```js
+```html
 <img
   src="https://vuejs.org/images/logo.png"
   alt="Vue Logo"
->
+/>
 
 ```
 
-```js
+```html
 <MyComponent
   foo="a"
   bar="b"
@@ -946,7 +942,7 @@ computed: {
 
 **应该把复杂计算属性分割为尽可能多的更简单的属性。**
 
- 详解 
+ 详解
 
 #### 反例
 
@@ -988,24 +984,24 @@ computed: {
 
 #### 反例
 
-```js
+```html
 <input type=text>
 
 ```
 
-```js
+```html
 <AppSidebar :style={width:sidebarWidth+'px'}>
 
 ```
 
 #### 好例子
 
-```js
+```html
 <input type="text">
 
 ```
 
-```js
+```html
 <AppSidebar :style="{ width: sidebarWidth + 'px' }">
 
 ```
@@ -1016,7 +1012,7 @@ computed: {
 
 #### 反例
 
-```js
+```html
 <input
   v-bind:value="newTodoText"
   :placeholder="newTodoInstructions"
@@ -1024,7 +1020,7 @@ computed: {
 
 ```
 
-```js
+```html
 <input
   v-on:input="onInput"
   @focus="onFocus"
@@ -1034,7 +1030,7 @@ computed: {
 
 #### 好例子
 
-```js
+```html
 <input
   :value="newTodoText"
   :placeholder="newTodoInstructions"
@@ -1042,7 +1038,7 @@ computed: {
 
 ```
 
-```js
+```html
 <input
   v-bind:value="newTodoText"
   v-bind:placeholder="newTodoInstructions"
@@ -1050,7 +1046,7 @@ computed: {
 
 ```
 
-```js
+```html
 <input
   @input="onInput"
   @focus="onFocus"
@@ -1058,7 +1054,7 @@ computed: {
 
 ```
 
-```js
+```html
 <input
   v-on:input="onInput"
   v-on:focus="onFocus"
@@ -1159,7 +1155,7 @@ computed: {
 
 #### 好例子
 
-```js
+```tsx
 props: {
   value: {
     type: String,
@@ -1187,7 +1183,7 @@ computed: {
 
 ```
 
-```js
+```tsx
 // 没有空行在组件易于阅读和导航时也没问题。
 props: {
   value: {
@@ -1218,14 +1214,14 @@ computed: {
 
 #### 反例
 
-```
+```html
 <style>/* ... */</style>
 <script>/* ... */</script>
 <template>...</template>
 
 ```
 
-```
+```html
 <!-- ComponentA.vue -->
 <script>/* ... */</script>
 <template>...</template>
@@ -1240,7 +1236,7 @@ computed: {
 
 #### 好例子
 
-```
+```html
 <!-- ComponentA.vue -->
 <script>/* ... */</script>
 <template>...</template>
@@ -1253,7 +1249,7 @@ computed: {
 
 ```
 
-```
+```html
 <!-- ComponentA.vue -->
 <template>...</template>
 <script>/* ... */</script>
@@ -1320,11 +1316,11 @@ computed: {
 
 在 `scoped` 样式中，类选择器比元素选择器更好，因为大量使用元素选择器是很慢的。
 
- 详解 
+ 详解
 
 #### 反例
 
-```js
+```html
 <template>
   <button>X</button>
 </template>
@@ -1339,7 +1335,7 @@ button {
 
 #### 好例子
 
-```js
+```html
 <template>
   <button class="btn btn-close">X</button>
 </template>
@@ -1474,7 +1470,7 @@ new Vue({
 
 #### 好例子
 
-```js
+```jsx
 // store/modules/todos.js
 export default {
   state: {

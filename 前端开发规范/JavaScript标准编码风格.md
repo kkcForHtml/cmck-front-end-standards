@@ -8,19 +8,15 @@
 
 你可以不用任何工具就可以采用这个标准，只要通读一下 [规则](http://standardjs.com/rules.html) 就可以
 
-
-
-### 实施方法：
+## 实施方法
 
 针对喜欢的编辑器安装编辑器插件自动化格式化，自动检查代码风格。
 
-##### 安装方法：
+## 安装方法
 
-https://standardjs.com/readme-zhcn.html
+<https://standardjs.com/readme-zhcn.html>
 
 掌握本规范的最好方法是安装并在自己的代码中使用它。
-
-
 
 ## JavaScript 标准风格细则
 
@@ -69,7 +65,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   function name (arg) { ... }   // ✓ ok
   function name(arg) { ... }    // ✗ avoid
-   
+
   run(function () { ... })      // ✓ ok
   run(function() { ... })       // ✗ avoid
   ```
@@ -209,8 +205,8 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   // ✗ avoid
   var value = 'hello world'
-   
-   
+
+
   console.log(value)
   ```
 
@@ -221,12 +217,12 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   // ✓ ok
   var location = env.development ? 'localhost' : 'www.api.com'
-   
+
   // ✓ ok
   var location = env.development
     ? 'localhost'
     : 'www.api.com'
-   
+
   // ✗ avoid
   var location = env.development ?
     'localhost' :
@@ -241,10 +237,10 @@ https://standardjs.com/readme-zhcn.html
   // ✓ ok
   var silent = true
   var verbose = true
-   
+
   // ✗ avoid
   var silent = true, verbose = true
-   
+
   // ✗ avoid
   var silent = true,
       verbose = true
@@ -259,7 +255,7 @@ https://standardjs.com/readme-zhcn.html
   while ((m = text.match(expr))) {
     // ...
   }
-   
+
   // ✗ avoid
   while (m = text.match(expr)) {
     // ...
@@ -282,7 +278,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
     function my_function () { }    // ✗ avoid
     function myFunction () { }     // ✓ ok
-   
+
     var my_var = 'hello'           // ✗ avoid
     var myVar = 'hello'            // ✓ ok
   ```
@@ -306,7 +302,7 @@ https://standardjs.com/readme-zhcn.html
       foo: 'foo'
       ,bar: 'bar'   // ✗ avoid
     }
-   
+
     var obj = {
       foo: 'foo',
       bar: 'bar'   // ✓ ok
@@ -320,7 +316,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
     console.
       log('hello')  // ✗ avoid
-   
+
     console
       .log('hello') // ✓ ok
   ```
@@ -356,7 +352,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   function animal () {}
   var dog = new animal()    // ✗ avoid
-   
+
   function Animal () {}
   var dog = new Animal()    // ✓ ok
   ```
@@ -381,7 +377,7 @@ https://standardjs.com/readme-zhcn.html
       this._name = value
     }
   }
-   
+
   var person = {
     set name (value) {
       this._name = value
@@ -402,7 +398,7 @@ https://standardjs.com/readme-zhcn.html
       super()   // ✗ avoid
     }
   }
-   
+
   class Dog extends Mammal {
     constructor () {
       super()   // ✓ ok
@@ -426,13 +422,13 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   function foo (n) {
     if (n <= 0) return
-   
+
     arguments.callee(n - 1)   // ✗ avoid
   }
-   
+
   function foo (n) {
     if (n <= 0) return
-   
+
     foo(n - 1)
   }
   ```
@@ -463,11 +459,11 @@ https://standardjs.com/readme-zhcn.html
   if (false) {    // ✗ avoid
     // ...
   }
-   
+
   if (x === 0) {  // ✓ ok
     // ...
   }
-   
+
   while (true) {  // ✓ ok
     // ...
   }
@@ -510,7 +506,7 @@ https://standardjs.com/readme-zhcn.html
   function sum (a, b, a) {  // ✗ avoid
     // ...
   }
-   
+
   function sum (a, b, c) {  // ✓ ok
     // ...
   }
@@ -557,7 +553,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   import { myFunc1 } from 'module'
   import { myFunc2 } from 'module'          // ✗ avoid
-   
+
   import { myFunc1, myFunc2 } from 'module' // ✓ ok
   ```
 
@@ -598,7 +594,7 @@ https://standardjs.com/readme-zhcn.html
   } catch (e) {
     e = 'new value'             // ✗ avoid
   }
-   
+
   try {
     // ...
   } catch (e) {
@@ -622,7 +618,7 @@ https://standardjs.com/readme-zhcn.html
   const name = function () {
     getName()
   }.bind(user)    // ✗ avoid
-   
+
   const name = function () {
     this.getName()
   }.bind(user)    // ✓ ok
@@ -637,7 +633,7 @@ https://standardjs.com/readme-zhcn.html
   if (!!result) {   // ✗ avoid
     // ...
   }
-   
+
   const result = true
   if (result) {     // ✓ ok
     // ...
@@ -664,7 +660,7 @@ https://standardjs.com/readme-zhcn.html
     case 2:
       doSomethingElse()
   }
-   
+
   switch (filter) {
     case 1:
       doSomething()
@@ -672,7 +668,7 @@ https://standardjs.com/readme-zhcn.html
     case 2:
       doSomethingElse()
   }
-   
+
   switch (filter) {
     case 1:
       doSomething()
@@ -788,7 +784,7 @@ https://standardjs.com/readme-zhcn.html
       myOtherFunc()
     }
   }
-   
+
   function myFunc () {
     myOtherFunc()       // ✓ ok
   }
@@ -915,7 +911,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   let name = 'John'
   let name = 'Jane'     // ✗ avoid
-   
+
   let name = 'John'
   name = 'Jane'         // ✓ ok
   ```
@@ -926,7 +922,7 @@ https://standardjs.com/readme-zhcn.html
 
   ```javascript
   const regexp = /test   value/   // ✗ avoid
-   
+
   const regexp = /test {3}value/  // ✓ ok
   const regexp = /test value/     // ✓ ok
   ```
@@ -939,7 +935,7 @@ https://standardjs.com/readme-zhcn.html
   function sum (a, b) {
     return result = a + b     // ✗ avoid
   }
-   
+
   function sum (a, b) {
     return (result = a + b)   // ✓ ok
   }
@@ -1030,7 +1026,7 @@ https://standardjs.com/readme-zhcn.html
 
   ```javascript
   let name = undefined    // ✗ avoid
-   
+
   let name
   name = 'value'          // ✓ ok
   ```
@@ -1157,9 +1153,9 @@ https://standardjs.com/readme-zhcn.html
     name: 'Jane Doe', age: 30,
     username: 'jdoe86'            // ✗ avoid
   }
-   
+
   const user = { name: 'Jane Doe', age: 30, username: 'jdoe86' }    // ✓ ok
-   
+
   const user = {
     name: 'Jane Doe',
     age: 30,
@@ -1175,9 +1171,9 @@ https://standardjs.com/readme-zhcn.html
   if (user) {
                               // ✗ avoid
     const name = getName()
-   
+
   }
-   
+
   if (user) {
     const name = getName()    // ✓ ok
   }
@@ -1235,7 +1231,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   //comment           // ✗ avoid
   // comment          // ✓ ok
-   
+
   /*comment*/         // ✗ avoid
   /* comment */       // ✓ ok
   ```
@@ -1273,7 +1269,7 @@ https://standardjs.com/readme-zhcn.html
 
   ```javascript
   const getName = function () { }()     // ✗ avoid
-   
+
   const getName = (function () { }())   // ✓ ok
   const getName = (function () { })()   // ✓ ok
   ```
@@ -1316,7 +1312,7 @@ https://standardjs.com/readme-zhcn.html
   ;(function () {
     window.alert('ok')
   }())
-   
+
   // ✗ avoid
   (function () {
     window.alert('ok')
@@ -1326,7 +1322,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   // ✓ ok
   ;[1, 2, 3].forEach(bar)
-   
+
   // ✗ avoid
   [1, 2, 3].forEach(bar)
   ```
@@ -1334,7 +1330,7 @@ https://standardjs.com/readme-zhcn.html
   ```javascript
   // ✓ ok
   ;`hello`.indexOf('o')
-   
+
   // ✗ avoid
   `hello`.indexOf('o')
   ```
